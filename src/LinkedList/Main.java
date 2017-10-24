@@ -10,58 +10,58 @@ public class Main {
 		CLType node,head = null;
 		CLType CL = new CLType();
 		String key,findkey;
-		Scanner input = new Scanner(System.in); 
-		
-		System.out.println("Á´±í²âÊÔ,ÏÈÊäÈëÁ´±íÖĞµÄÊı¾İ.¸ñÊ½Îª:¹Ø¼ü×Ö ĞÕÃû ÄêÁä  \n");
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("é“¾è¡¨æµ‹è¯•,å…ˆè¾“å…¥é“¾è¡¨ä¸­çš„æ•°æ®.æ ¼å¼ä¸º:å…³é”®å­— å§“å å¹´é¾„  \n");
 		do{
 			DATA2 nodeData = new DATA2();
-			System.out.println("ÇëÊäÈë¹Ø¼ü×Ö \n");
+			System.out.println("è¯·è¾“å…¥å…³é”®å­— \n");
 			nodeData.key = input.next();
-			if(nodeData.key.equals("0")){                              //ÅĞ¶Ï¹Ø¼ü×ÖÊÇ·ñÎª0
+			if(nodeData.key.equals("0")){                              //åˆ¤æ–­å…³é”®å­—æ˜¯å¦ä¸º0
 				break;
 			}else{
-				System.out.println("ÇëÊäÈëĞÕÃû \n");
+				System.out.println("è¯·è¾“å…¥å§“å \n");
 				nodeData.name = input.next();
-				System.out.println("ÇëÊäÈëÄêÁä \n");
+				System.out.println("è¯·è¾“å…¥å¹´é¾„ \n");
 				nodeData.age = input.nextInt();
-				head = CL.CLAddEnd(head, nodeData);             //ÔÚÁ´±í½áÎ²Ìí¼Ó½áµã
-				
+				head = CL.CLAddEnd(head, nodeData);             //åœ¨é“¾è¡¨ç»“å°¾æ·»åŠ ç»“ç‚¹
+
 				if(CL.CLFindNode(head, nodeData.key)!=null){
-					System.out.println("ÊäÈë³É¹¦");
+					System.out.println("è¾“å…¥æˆåŠŸ");
 				}
 				CL.CLAllNode(head);
 			}
 		}
 		while(true);
-		
+
 		CL.CLAllNode(head);
-		System.out.println("\n ÑİÊ¾²åÈë½áµã,ÊäÈë²åÈëÎ»ÖÃµÄ¹Ø¼ü×Ö:");
+		System.out.println("\n æ¼”ç¤ºæ’å…¥ç»“ç‚¹,è¾“å…¥æ’å…¥ä½ç½®çš„å…³é”®å­—:");
 		findkey = input.next();
-		System.out.println("ÊäÈë²åÈë½áµãµÄÊı¾İ(¹Ø¼ü×Ö ĞÕÃû ÄêÁä) \n");
-		
+		System.out.println("è¾“å…¥æ’å…¥ç»“ç‚¹çš„æ•°æ®(å…³é”®å­— å§“å å¹´é¾„) \n");
+
 		DATA2 nodeData1 = new DATA2();
 		nodeData1.key = input.next();
 		nodeData1.name = input.next();
 		nodeData1.age = input.nextInt();
-		
-		head.CLInsertNode(head, findkey, nodeData1);           //µ÷ÓÃ²åÈëº¯Êı
+
+		head.CLInsertNode(head, findkey, nodeData1);           //è°ƒç”¨æ’å…¥å‡½æ•°
 		CL.CLAllNode(head);
-		
-		System.out.println("\n ÑİÊ¾É¾³ı½áµã,ÊäÈëÒªÉ¾³ıµÄ¹Ø¼ü×Ö:");
+
+		System.out.println("\n æ¼”ç¤ºåˆ é™¤ç»“ç‚¹,è¾“å…¥è¦åˆ é™¤çš„å…³é”®å­—:");
 		key = input.next();
-		CL.CLDeleteNode(head, key);                            //É¾³ı½áµã
+		CL.CLDeleteNode(head, key);                            //åˆ é™¤ç»“ç‚¹
 		CL.CLAllNode(head);
-		
-		System.out.println("\n ÑİÊ¾ÔÚÁ´±íÖĞ²éÕÒ,ÊäÈë²éÕÒ¹Ø¼ü×Ö;");
+
+		System.out.println("\n æ¼”ç¤ºåœ¨é“¾è¡¨ä¸­æŸ¥æ‰¾,è¾“å…¥æŸ¥æ‰¾å…³é”®å­—;");
 		key = input.next();
-		node = CL.CLFindNode(head, key);                         //µ÷ÓÃ²éÕÒ¹Ø¼ü×Ö,·µ»Ø½áµãÒıÓÃ
-		if(node!=null){                                          //Èô·µ»Ø½áµãÒıÓÃÓĞĞ§
+		node = CL.CLFindNode(head, key);                         //è°ƒç”¨æŸ¥æ‰¾å…³é”®å­—,è¿”å›ç»“ç‚¹å¼•ç”¨
+		if(node!=null){                                          //è‹¥è¿”å›ç»“ç‚¹å¼•ç”¨æœ‰æ•ˆ
 			DATA2 nodeData2 = node.nextData;
-			System.out.printf("¹Ø¼ü×Ö%s¶ÔÓ¦µÄ½áµãÎª(%s,%s,%d)",key,nodeData2.key,nodeData2.name,nodeData2.age);
+			System.out.printf("å…³é”®å­—%så¯¹åº”çš„ç»“ç‚¹ä¸º(%s,%s,%d)",key,nodeData2.key,nodeData2.name,nodeData2.age);
 		}
 		else{
-			System.out.printf("ÔÚÁ´±íÖĞÃ»ÓĞÕÒµ½¹Ø¼ü×ÖÎª%sµÄ½áµã",key);
+			System.out.printf("åœ¨é“¾è¡¨ä¸­æ²¡æœ‰æ‰¾åˆ°å…³é”®å­—ä¸º%sçš„ç»“ç‚¹",key);
 		}
-		System.out.println("\n ÑİÊ¾Íê±Ï,Á´±í½á¹¹ÑİÊ¾Íê±Ï");
+		System.out.println("\n æ¼”ç¤ºå®Œæ¯•,é“¾è¡¨ç»“æ„æ¼”ç¤ºå®Œæ¯•");
 	}
 }

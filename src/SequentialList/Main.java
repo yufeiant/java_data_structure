@@ -2,60 +2,60 @@ package SequentialList;
 
 import java.util.Scanner;
 
-//ÊµÕ½²Ù×÷ÑİÊ¾Ë³Ğò±í½á¹¹
+//å®æˆ˜æ“ä½œæ¼”ç¤ºé¡ºåºè¡¨ç»“æ„
 public class Main {
 
 	public static void main(String[] args) {
 		int i;
-		SLType SL = new SLType();                        //¶¨ÒåË³Ğò±í±äÁ¿
-		DATA pdata;                                      //¶¨Òå½áµã±£´æÒıÓÃ±äÁ¿
-		String key;                                      //±£´æ¹Ø¼ü×Ö
-		
-		System.out.println("Ë³Ğò±í²Ù×÷ÑİÊ¾! \n");
-		
-		SL.SLInit(SL);                                   //³õÊ¼»¯Ë³Ğò±í
-		System.out.println("Ë³Ğò±í³õÊ¼»¯Íê³É! \n");
-		
+		SLType SL = new SLType();                        //å®šä¹‰é¡ºåºè¡¨å˜é‡
+		DATA pdata;                                      //å®šä¹‰ç»“ç‚¹ä¿å­˜å¼•ç”¨å˜é‡
+		String key;                                      //ä¿å­˜å…³é”®å­—
+
+		System.out.println("é¡ºåºè¡¨æ“ä½œæ¼”ç¤º! \n");
+
+		SL.SLInit(SL);                                   //åˆå§‹åŒ–é¡ºåºè¡¨
+		System.out.println("é¡ºåºè¡¨åˆå§‹åŒ–å®Œæˆ! \n");
+
 		Scanner input =  new Scanner(System.in);
-		
+
 		do{
-			System.out.println("ÇëÊäÈëÌí¼ÓµÄ½áµã(Ñ§ºÅ ĞÕÃû ÄêÁä):");
+			System.out.println("è¯·è¾“å…¥æ·»åŠ çš„ç»“ç‚¹(å­¦å· å§“å å¹´é¾„):");
 			DATA data = new DATA();
 			data.key = input.next();
-			System.out.println("ÇëÊäÈëÌí¼ÓµÄ½áµã(Ñ§ºÅ key =):"+data.key);
+			System.out.println("è¯·è¾“å…¥æ·»åŠ çš„ç»“ç‚¹(å­¦å· key =):"+data.key);
 			data.name = input.next();
-			System.out.println("ÇëÊäÈëÌí¼ÓµÄ½áµã(ĞÕÃû name =):"+data.name);
+			System.out.println("è¯·è¾“å…¥æ·»åŠ çš„ç»“ç‚¹(å§“å name =):"+data.name);
 			data.age = input.nextInt();
-			System.out.println("ÇëÊäÈëÌí¼ÓµÄ½áµã(ÄêÁä age =):"+data.age);
-			
+			System.out.println("è¯·è¾“å…¥æ·»åŠ çš„ç»“ç‚¹(å¹´é¾„ age =):"+data.age);
+
 			if(data.age!=0){
-				if(SL.SLAdd(SL, data)==0){                 //Èç¹û·µ»ØÊÇ0,ÔòÌí¼ÓÊ§°Ü
+				if(SL.SLAdd(SL, data)==0){                 //å¦‚æœè¿”å›æ˜¯0,åˆ™æ·»åŠ å¤±è´¥
 					break;
 				}
 			}else{
 				break;
 			}
 		}while(true);
-		
-		System.out.println("\n Ë³Ğò±íµÄ½áµãË³ĞòÊÇ: \n");
+
+		System.out.println("\n é¡ºåºè¡¨çš„ç»“ç‚¹é¡ºåºæ˜¯: \n");
 		SL.SLAll(SL);
-		
-		System.out.println("\n ÒªÈ¡³öµÄ½áµãĞòºÅÎª: ");
+
+		System.out.println("\n è¦å–å‡ºçš„ç»“ç‚¹åºå·ä¸º: ");
 		i = input.nextInt();
 		pdata = SL.SLFindByNum(SL, i);
 		if(pdata!=null){
-			System.out.printf("µÚ%d¸ö½áµãÎª:(%d,%s,%d)\n",i,pdata.key,pdata.name,pdata.age);
+			System.out.printf("ç¬¬%dä¸ªç»“ç‚¹ä¸º:(%d,%s,%d)\n",i,pdata.key,pdata.name,pdata.age);
 		}
-		
-		System.out.println("\n Òª²éÕÒ½áµãµÄ¹Ø¼ü×Ö:");
-		
+
+		System.out.println("\n è¦æŸ¥æ‰¾ç»“ç‚¹çš„å…³é”®å­—:");
+
 		key = input.next();
 		i = SL.SLFindByCout(SL, key);
 		pdata = SL.SLFindByNum(SL, i);
 		if(pdata!=null){
-			System.out.printf("µÚ%d¸ö½áµãÎª:(%d,%s,%d)\n",i,pdata.key,pdata.name,pdata.age);
+			System.out.printf("ç¬¬%dä¸ªç»“ç‚¹ä¸º:(%d,%s,%d)\n",i,pdata.key,pdata.name,pdata.age);
 		}
-		
+
 	}
 
 }

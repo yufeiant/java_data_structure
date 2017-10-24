@@ -1,50 +1,50 @@
 package LinkedList;
 /**
- * Êı¾İ½áµãÀàĞÍ
- * ¶¨ÒåÁ´±í½á¹¹
+ * æ•°æ®ç»“ç‚¹ç±»å‹
+ * å®šä¹‰é“¾è¡¨ç»“æ„
  * @author feiyu
  *
  */
 public class CLType {
-	DATA2 nextData  = new DATA2();     //µ±Ç°½áµãµÄÊı¾İÀàĞÍ
-	CLType nextNode;                   //´¢´æÏÂÒ»¸ö½áµãµÄÎ»ÖÃ
+	DATA2 nextData  = new DATA2();     //å½“å‰ç»“ç‚¹çš„æ•°æ®ç±»å‹
+	CLType nextNode;                   //å‚¨å­˜ä¸‹ä¸€ä¸ªç»“ç‚¹çš„ä½ç½®
 	/**
-	 * ×·¼ÓÒ»¸ö½áµã
-	 * 1.Ê×ÏÈ·ÖÅäÄÚ´æ¿Õ¼ä,±£´æĞÂÔöµÄ½áµã
-	 * 2.´ÓÍ·ÒıÓÃ¿ªÊ¼¼ì²é,Ö±µ½ÕÒµ½×îºóÒ»¸ö½áµã,
-	 * 3.½«½áÎ²½áµãµÄÄÚ´æµØÖ·ÉèÎªĞÂµÄ½áµã
-	 * 4.½«ĞÂµÄ½áµãµÄµØÖ·²¿·ÖÉèÖÃÎª¿ÕµØÖ·,null,¼´ĞÂ½áµã³ÉÎª±íÎ².
-	 * @param head Í·½áµã
-	 * @param nodeData ½áµãÊı¾İ
-	 * @return ·µ»ØÍ·½áµã
+	 * è¿½åŠ ä¸€ä¸ªç»“ç‚¹
+	 * 1.é¦–å…ˆåˆ†é…å†…å­˜ç©ºé—´,ä¿å­˜æ–°å¢çš„ç»“ç‚¹
+	 * 2.ä»å¤´å¼•ç”¨å¼€å§‹æ£€æŸ¥,ç›´åˆ°æ‰¾åˆ°æœ€åä¸€ä¸ªç»“ç‚¹,
+	 * 3.å°†ç»“å°¾ç»“ç‚¹çš„å†…å­˜åœ°å€è®¾ä¸ºæ–°çš„ç»“ç‚¹
+	 * 4.å°†æ–°çš„ç»“ç‚¹çš„åœ°å€éƒ¨åˆ†è®¾ç½®ä¸ºç©ºåœ°å€,null,å³æ–°ç»“ç‚¹æˆä¸ºè¡¨å°¾.
+	 * @param head å¤´ç»“ç‚¹
+	 * @param nodeData ç»“ç‚¹æ•°æ®
+	 * @return è¿”å›å¤´ç»“ç‚¹
 	 */
 	public CLType CLAddEnd(CLType head,DATA2 nodeData){
-		                                //1.·ÖÅäÄÚ´æ,±£´æĞÂÔöµÄ½áµãÊı¾İ
+		//1.åˆ†é…å†…å­˜,ä¿å­˜æ–°å¢çš„ç»“ç‚¹æ•°æ®
 		CLType node,htemp;
 		if((node=new CLType())==null){
-			System.out.println("ÉêÇëÄÚ´æÊ§°Ü! \n");
+			System.out.println("ç”³è¯·å†…å­˜å¤±è´¥! \n");
 			return null;
 		}else{
-			
-			node.nextData = nodeData;   //2.±£´æÊı¾İ
-			node.nextNode = null;       //3.ÉèÖÃÏÂÒ»¸ö½áµãµÄË÷ÒıÎªnull,ÒòÎª×·¼ÓµÄÕâ¸öÊÇÁ´Î²
-			if(head ==null){            //4.ÅĞ¶ÏÁ´Í·ÊÇ·ñÎª¿Õ,Èç¹ûÎª¿Õ,ÔòÖ±½Ó¸³Öµ²¢·µ»Ø
+
+			node.nextData = nodeData;   //2.ä¿å­˜æ•°æ®
+			node.nextNode = null;       //3.è®¾ç½®ä¸‹ä¸€ä¸ªç»“ç‚¹çš„ç´¢å¼•ä¸ºnull,å› ä¸ºè¿½åŠ çš„è¿™ä¸ªæ˜¯é“¾å°¾
+			if(head ==null){            //4.åˆ¤æ–­é“¾å¤´æ˜¯å¦ä¸ºç©º,å¦‚æœä¸ºç©º,åˆ™ç›´æ¥èµ‹å€¼å¹¶è¿”å›
 				head = node;
 				return head;
 			}
 			htemp = head;
-			while(htemp.nextNode !=null){//5.Ñ­»·ÅĞ¶ÏÊÇ·ñÊÇÁ´Î²,Èç¹û²»ÊÇÁ´Î²Ôò¼ÌĞøÅĞ¶Ï
+			while(htemp.nextNode !=null){//5.å¾ªç¯åˆ¤æ–­æ˜¯å¦æ˜¯é“¾å°¾,å¦‚æœä¸æ˜¯é“¾å°¾åˆ™ç»§ç»­åˆ¤æ–­
 				htemp = htemp.nextNode;
 			}
-			htemp.nextNode = node;       //6.ÅĞ¶ÏÍê³ÉºóÕâ¸ö¿Ï¶¨ÊÇÁ´Î²ÁË,Ö±½Ó¸³Öµ
+			htemp.nextNode = node;       //6.åˆ¤æ–­å®Œæˆåè¿™ä¸ªè‚¯å®šæ˜¯é“¾å°¾äº†,ç›´æ¥èµ‹å€¼
 			return head;
 		}
 	}
 	/**
-	 * ²åÈëÍ·½áµã
-	 * 1.·ÖÅäÄÚ´æ¿Õ¼ä,±£´æĞÂÔöµÄ½áµã
-	 * 2.½«ĞÂÔö½áµãÖ¸ÏòÍ·ÒıÓÃµÄheadËùÖ¸ÏòµÄ½áµã
-	 * 3.Ê¹Í·ÒıÓÃÖ¸ÏòĞÂÔöµÄ½áµã ,ÓĞµãÈÆ,¾ÍÊÇ½»»»ÁËÒ»ÏÂÎ»ÖÃ,ÈÃheadÔ­À´µÄÍ·½áµãÖ¸ÏòĞÂµÄÍ·½áµã
+	 * æ’å…¥å¤´ç»“ç‚¹
+	 * 1.åˆ†é…å†…å­˜ç©ºé—´,ä¿å­˜æ–°å¢çš„ç»“ç‚¹
+	 * 2.å°†æ–°å¢ç»“ç‚¹æŒ‡å‘å¤´å¼•ç”¨çš„headæ‰€æŒ‡å‘çš„ç»“ç‚¹
+	 * 3.ä½¿å¤´å¼•ç”¨æŒ‡å‘æ–°å¢çš„ç»“ç‚¹ ,æœ‰ç‚¹ç»•,å°±æ˜¯äº¤æ¢äº†ä¸€ä¸‹ä½ç½®,è®©headåŸæ¥çš„å¤´ç»“ç‚¹æŒ‡å‘æ–°çš„å¤´ç»“ç‚¹
 	 * @param head
 	 * @param nodeData
 	 * @return
@@ -52,7 +52,7 @@ public class CLType {
 	public CLType CLAddFirst(CLType head,DATA2 nodeData){
 		CLType node;
 		if((node =new CLType())==null){
-			System.out.println("ÉêÇëÄÚ´æÊ§°Ü! \n");
+			System.out.println("ç”³è¯·å†…å­˜å¤±è´¥! \n");
 			return null;
 		}else{
 			node.nextData = nodeData;
@@ -62,9 +62,9 @@ public class CLType {
 		}
 	}
 	/**
-	 * ²éÕÒ½áµã
-	 * @param head Í·½áµã
-	 * @param findkey 
+	 * æŸ¥æ‰¾ç»“ç‚¹
+	 * @param head å¤´ç»“ç‚¹
+	 * @param findkey
 	 * @return
 	 */
 	public CLType CLFindNode(CLType head,String findkey){
@@ -72,19 +72,19 @@ public class CLType {
 		htemp = head;
 		while(htemp.nextNode!=null){
 			if(htemp.nextData.key.compareTo(findkey)==0){
-				return htemp; 
+				return htemp;
 			}
 			htemp = htemp.nextNode;
 		}
 		return null;
 	}
-	
+
 	/**
-	 * ²åÈë½áµã
-	 * 1.·ÖÅäÄÚ´æ¿Õ¼ä,±£´æĞÂÔöµÄ½áµã
-	 * 2.²éÕÒ¹Ø¼ü×Ö,ÕÒµ½ĞèÒª²åÈëµÄ½áµãÎ»ÖÃ²¢·µ»Ø
-	 * 3.°ÑÕÒµ½µÄ½áµãÎ»ÖÃµØÖ·±£´æµ½ĞÂµÄ½áµãµØÖ·Î»ÖÃ
-	 * 4.°ÑÕÒµ½µÄ½áµãÎ»ÖÃÖ¸ÏòĞÂµÄ½áµã
+	 * æ’å…¥ç»“ç‚¹
+	 * 1.åˆ†é…å†…å­˜ç©ºé—´,ä¿å­˜æ–°å¢çš„ç»“ç‚¹
+	 * 2.æŸ¥æ‰¾å…³é”®å­—,æ‰¾åˆ°éœ€è¦æ’å…¥çš„ç»“ç‚¹ä½ç½®å¹¶è¿”å›
+	 * 3.æŠŠæ‰¾åˆ°çš„ç»“ç‚¹ä½ç½®åœ°å€ä¿å­˜åˆ°æ–°çš„ç»“ç‚¹åœ°å€ä½ç½®
+	 * 4.æŠŠæ‰¾åˆ°çš„ç»“ç‚¹ä½ç½®æŒ‡å‘æ–°çš„ç»“ç‚¹
 	 * @param head
 	 * @param findkey
 	 * @param nodeData
@@ -93,32 +93,32 @@ public class CLType {
 	public CLType CLInsertNode(CLType head,String findkey,DATA2 nodeData){
 		CLType node,nodetemp;
 		if((node=new CLType())==null){
-			System.out.println("ÉêÇëÄÚ´æÊ§°Ü! \n");
+			System.out.println("ç”³è¯·å†…å­˜å¤±è´¥! \n");
 			return null;
 		}
-		
+
 		node.nextData = nodeData;
 		nodetemp = head.CLFindNode(head, findkey);
 		if(nodetemp!=null){
 			node.nextNode = nodetemp.nextNode;
 			nodetemp.nextNode = node;
 		}else{
-			System.out.println("²åÈëÊ§°Ü \n");
+			System.out.println("æ’å…¥å¤±è´¥ \n");
 		}
 		return head;
 	}
 	/**
-	 * É¾³ı½áµã
-	 * 1.ÕÒµ½ÒªÉ¾³ıµÄ½áµãÎ»ÖÃ
-	 * 2.°ÑÇ°Ò»¸ö½áµãÖ¸Ïòµ±Ç°½áµãµÄºóÒ»¸ö½áµã
-	 * 3.É¾³ı½áµã
+	 * åˆ é™¤ç»“ç‚¹
+	 * 1.æ‰¾åˆ°è¦åˆ é™¤çš„ç»“ç‚¹ä½ç½®
+	 * 2.æŠŠå‰ä¸€ä¸ªç»“ç‚¹æŒ‡å‘å½“å‰ç»“ç‚¹çš„åä¸€ä¸ªç»“ç‚¹
+	 * 3.åˆ é™¤ç»“ç‚¹
 	 * @param head
 	 * @param key
 	 * @return
 	 */
 	public int CLDeleteNode(CLType head,String key){
-		CLType node,htemp;                           //±£´æÉÏÒ»¸ö½áµãºÍµ±Ç°½áµã
-		htemp = head;                                //±£´æµ±Ç°½áµã
+		CLType node,htemp;                           //ä¿å­˜ä¸Šä¸€ä¸ªç»“ç‚¹å’Œå½“å‰ç»“ç‚¹
+		htemp = head;                                //ä¿å­˜å½“å‰ç»“ç‚¹
 		node = head;
 		while(htemp!=null){
 			if(htemp.nextData.key.compareTo(key)==0){
@@ -133,8 +133,8 @@ public class CLType {
 		return 0;
 	}
 	/**
-	 * »ñÈ¡Á´±íµÄ³¤¶È
-	 * 1.´Ó±éÀúµ½Î²,È»ºó½øĞĞÀÛ¼Ó
+	 * è·å–é“¾è¡¨çš„é•¿åº¦
+	 * 1.ä»éå†åˆ°å°¾,ç„¶åè¿›è¡Œç´¯åŠ 
 	 * @return
 	 */
 	public int CLLength(CLType head){
@@ -147,7 +147,7 @@ public class CLType {
 		return length;
 	}
 	/**
-	 * ÏÔÊ¾ËùÓĞ½áµã
+	 * æ˜¾ç¤ºæ‰€æœ‰ç»“ç‚¹
 	 * @param head
 	 */
 	public void CLAllNode(CLType head){
@@ -156,7 +156,7 @@ public class CLType {
 		DATA2 nodeData;
 		while(htemp!=null){
 			nodeData = htemp.nextData;
-			System.out.printf("½áµã(%s,%s,%d) \n",nodeData.key,nodeData.name,nodeData.age);
+			System.out.printf("ç»“ç‚¹(%s,%s,%d) \n",nodeData.key,nodeData.name,nodeData.age);
 			htemp = htemp.nextNode;
 		}
 	}

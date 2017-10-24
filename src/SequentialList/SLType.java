@@ -2,96 +2,96 @@ package SequentialList;
 
 public class SLType {
 	static final int MAXLEN = 100;
-	//¶¨ÒåË³Ğò±í½á¹¹
-	DATA [] ListData = new DATA[MAXLEN+1];//±£´æË³Ğò±íµÄ½á¹¹Êı×é
-	int ListLen;                          //Ë³Ğò±íÒÑ´æ½ÚµãµÄÊıÁ¿
+	//å®šä¹‰é¡ºåºè¡¨ç»“æ„
+	DATA [] ListData = new DATA[MAXLEN+1];//ä¿å­˜é¡ºåºè¡¨çš„ç»“æ„æ•°ç»„
+	int ListLen;                          //é¡ºåºè¡¨å·²å­˜èŠ‚ç‚¹çš„æ•°é‡
 	/**
-	 * ³õÊ¼»¯Ë³Ğò±í
+	 * åˆå§‹åŒ–é¡ºåºè¡¨
 	 * @param SL
 	 */
 	public void SLInit(SLType SL){
-		SL.ListLen=0;//³õÊ¼»¯¿Õ±í
+		SL.ListLen=0;//åˆå§‹åŒ–ç©ºè¡¨
 	}
 	/**
-	 * ·µ»ØË³Ğò±íµÄÔªËØÊıÁ¿
+	 * è¿”å›é¡ºåºè¡¨çš„å…ƒç´ æ•°é‡
 	 */
 	public int SLLength(SLType SL){
 		return SL.ListLen;
 	}
 	/**
-	 * ²åÈë½áµã
-	 * ²åÈë½áµã¾ÍÊÇÔÚÏßĞÔ±íµÄµÚi¸öÎ»ÖÃ²åÈëÒ»¸öĞÂµÄ½áµã,Ê¹µÃÆäºóµÄ½áµã±àºÅÒÀ´Î¼Ó1,ÕâÊ±,²åÈëÒ»¸ö½áµãºó,ÏßĞÔ±íµÄ³¤¶ÈL½«±äÎª
-	 * n+1,²åÈë½áµãµÄÄÑµãÔÚÓÚËæºóµÄÃ¿¸ö½áµãµÄÊı¾İ¶¼ÒªÏòºóÒÆ¶¯
+	 * æ’å…¥ç»“ç‚¹
+	 * æ’å…¥ç»“ç‚¹å°±æ˜¯åœ¨çº¿æ€§è¡¨çš„ç¬¬iä¸ªä½ç½®æ’å…¥ä¸€ä¸ªæ–°çš„ç»“ç‚¹,ä½¿å¾—å…¶åçš„ç»“ç‚¹ç¼–å·ä¾æ¬¡åŠ 1,è¿™æ—¶,æ’å…¥ä¸€ä¸ªç»“ç‚¹å,çº¿æ€§è¡¨çš„é•¿åº¦Lå°†å˜ä¸º
+	 * n+1,æ’å…¥ç»“ç‚¹çš„éš¾ç‚¹åœ¨äºéšåçš„æ¯ä¸ªç»“ç‚¹çš„æ•°æ®éƒ½è¦å‘åç§»åŠ¨
 	 * @return
 	 */
 	public int Insert(SLType SL,int n,DATA data){
 		int i;
-		if(SL.ListLen>=MAXLEN){                                //ÅĞ¶ÏË³Ğò±íÊÇ·ñÒÑÂú
-			System.out.println("Ë³Ğò±íÒÑÂú£¬²»ÄÜ²åÈë½áµã£¡\n");
+		if(SL.ListLen>=MAXLEN){                                //åˆ¤æ–­é¡ºåºè¡¨æ˜¯å¦å·²æ»¡
+			System.out.println("é¡ºåºè¡¨å·²æ»¡ï¼Œä¸èƒ½æ’å…¥ç»“ç‚¹ï¼\n");
 			return 0;
 		}
-		if(n<1||n>SL.ListLen-1){                               //ÅĞ¶Ï²åÈë·ûºÅÊÇ·ñÕıÈ·
-			System.out.println("²åÈëÔªËØĞòºÅ´íÎó£¬²»ÄÜ²åÈëÔªËØ£¡\n");
+		if(n<1||n>SL.ListLen-1){                               //åˆ¤æ–­æ’å…¥ç¬¦å·æ˜¯å¦æ­£ç¡®
+			System.out.println("æ’å…¥å…ƒç´ åºå·é”™è¯¯ï¼Œä¸èƒ½æ’å…¥å…ƒç´ ï¼\n");
 			return 0;
-		}	  
-		for (int j = SL.ListLen; j>n; j--) {                     //½«Ë³Ğò±íÖĞµÄÊı¾İÏòºóÒÆ¶¯
+		}
+		for (int j = SL.ListLen; j>n; j--) {                     //å°†é¡ºåºè¡¨ä¸­çš„æ•°æ®å‘åç§»åŠ¨
 			SL.ListData[j+1]=SL.ListData[j];
 		}
-		SL.ListData[n]=data;                                    //²åÈëÎ»ÖÃ
+		SL.ListData[n]=data;                                    //æ’å…¥ä½ç½®
 		SL.ListLen++;
-		return 1;                                               //³É¹¦²åÈë,·µ»Ø1
+		return 1;                                               //æˆåŠŸæ’å…¥,è¿”å›1
 	}
-	
+
 	/**
-	 * Ôö¼ÓÔªËØµ½Ë³Ğò±íÎ²²¿
+	 * å¢åŠ å…ƒç´ åˆ°é¡ºåºè¡¨å°¾éƒ¨
 	 * @param SL
 	 * @param data
 	 * @return
 	 */
 	public int SLAdd(SLType SL,DATA data){
-		
-		if(SL.ListLen >= MAXLEN){                               //ÅĞ¶ÏÊÇ·ñÒÑÂú
-			System.out.println("Ë³Ğò±íÒÑÂú,²»ÄÜÔÙÌí¼Ó½áµãÁË");
+
+		if(SL.ListLen >= MAXLEN){                               //åˆ¤æ–­æ˜¯å¦å·²æ»¡
+			System.out.println("é¡ºåºè¡¨å·²æ»¡,ä¸èƒ½å†æ·»åŠ ç»“ç‚¹äº†");
 			return 0;
 		}
 		SL.ListData[++SL.ListLen] = data;
 		return 1;
 	}
 	/**
-	 * É¾³ıË³Ğò±íÖĞµÄÊı¾İÔªËØ
-	 * Ë³Ğò±íÉ¾µôµÚi¸ö½áµã,ÄÇÃ´Ö®ºóµÄËùÓĞ½áµãµÄÎ»ÖÃ¶¼ĞèÒªÏòÇ°ÒÆ¶¯Ò»¸öÎ»ÖÃ
+	 * åˆ é™¤é¡ºåºè¡¨ä¸­çš„æ•°æ®å…ƒç´ 
+	 * é¡ºåºè¡¨åˆ æ‰ç¬¬iä¸ªç»“ç‚¹,é‚£ä¹ˆä¹‹åçš„æ‰€æœ‰ç»“ç‚¹çš„ä½ç½®éƒ½éœ€è¦å‘å‰ç§»åŠ¨ä¸€ä¸ªä½ç½®
 	 * @return
 	 */
 	public int SLDeleteType(SLType SL,int n){
 		int i;
-		if(n<1||n>SL.ListLen-1){                               //ÅĞ¶Ï²åÈë·ûºÅÊÇ·ñÕıÈ·
-			System.out.println("É¾³ıÔªËØ·ûºÅ´íÎó£¡\n");
+		if(n<1||n>SL.ListLen-1){                               //åˆ¤æ–­æ’å…¥ç¬¦å·æ˜¯å¦æ­£ç¡®
+			System.out.println("åˆ é™¤å…ƒç´ ç¬¦å·é”™è¯¯ï¼\n");
 			return 0;
 		}
-		
-		for (i = n; i < SL.ListLen; i++) {                    //Ë³Ğò±íÖĞµÄÔªËØÏòÇ°ÒÆ¶¯
+
+		for (i = n; i < SL.ListLen; i++) {                    //é¡ºåºè¡¨ä¸­çš„å…ƒç´ å‘å‰ç§»åŠ¨
 			SL.ListData[n+1] = SL.ListData[n];
 		}
-		
-		SL.ListLen--;                                        //Ë³Ğò±íµÄÔªËØÊıÁ¿¼õÒ»
+
+		SL.ListLen--;                                        //é¡ºåºè¡¨çš„å…ƒç´ æ•°é‡å‡ä¸€
 		return 1;
 	}
 	/**
-	 * °´ÕÕĞòºÅ²éÕÒ½áµã
+	 * æŒ‰ç…§åºå·æŸ¥æ‰¾ç»“ç‚¹
 	 * @return
 	 */
-	public DATA SLFindByNum(SLType SL,int n){                 //¸ù¾İĞòºÅ·µ»ØÊı¾İÔªËØ
+	public DATA SLFindByNum(SLType SL,int n){                 //æ ¹æ®åºå·è¿”å›æ•°æ®å…ƒç´ 
 		if(n<1||n>SL.ListLen-1){
-			System.out.println("²éÕÒ·ûºÅ´íÎó£¡\n");
+			System.out.println("æŸ¥æ‰¾ç¬¦å·é”™è¯¯ï¼\n");
 			return null;
 		}
 		return SL.ListData[n];
 	}
 	/**
-	 * °´ÕÕ¹Ø¼ü×Ö²éÕÒ½áµã  ·µ»Ø½áµãĞòºÅ
+	 * æŒ‰ç…§å…³é”®å­—æŸ¥æ‰¾ç»“ç‚¹  è¿”å›ç»“ç‚¹åºå·
 	 * @return
 	 */
-	public int SLFindByCout(SLType SL,String key){           //°´ÕÕ¹Ø¼ü×Ö²éÕÒÔªËØ
+	public int SLFindByCout(SLType SL,String key){           //æŒ‰ç…§å…³é”®å­—æŸ¥æ‰¾å…ƒç´ 
 		int j;
 		for (j = 1; j < SL.ListLen; j++) {
 			if(SL.ListData[j].key.compareTo(key)==0){
@@ -101,7 +101,7 @@ public class SLType {
 		return 0;
 	}
 	/**
-	 * ·µ»ØËùÓĞ½áµã
+	 * è¿”å›æ‰€æœ‰ç»“ç‚¹
 	 * @return
 	 */
 	public int SLAll(SLType SL){

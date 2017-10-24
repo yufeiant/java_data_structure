@@ -1,7 +1,7 @@
 package LinkedList;
 
 public class DATA2 {
-	String key; //结点的关键字
+	String key; //缁撶偣鐨勫叧閿瓧
 	String name;
 	int age;
 }

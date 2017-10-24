@@ -1,7 +1,7 @@
 package SequentialList;
 
 public class DATA {
-	String key; //结点的关键字
+	String key; //缁撶偣鐨勫叧閿瓧
 	String name;
 	int age;
 }
