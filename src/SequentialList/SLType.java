@@ -30,7 +30,7 @@ public class SLType {
 			System.out.println("顺序表已满，不能插入结点！\n");
 			return 0;
 		}
-		if(n<1||n>SL.ListLen-1){                               //判断插入符号是否正确
+		if(n<1||n>SL.ListLen+1){                               //判断插入符号是否正确
 			System.out.println("插入元素序号错误，不能插入元素！\n");
 			return 0;
 		}
@@ -64,7 +64,7 @@ public class SLType {
 	 */
 	public int SLDeleteType(SLType SL,int n){
 		int i;
-		if(n<1||n>SL.ListLen-1){                               //判断插入符号是否正确
+		if(n<1||n>SL.ListLen+1){                               //判断插入符号是否正确
 			System.out.println("删除元素符号错误！\n");
 			return 0;
 		}

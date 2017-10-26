@@ -1,5 +1,6 @@
 package SequentialList;
 
+
 import java.util.Scanner;
 
 //实战操作演示顺序表结构
@@ -17,6 +18,7 @@ public class Main {
 		System.out.println("顺序表初始化完成! \n");
 
 		Scanner input =  new Scanner(System.in);
+		
 
 		do{
 
