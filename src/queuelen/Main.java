@@ -15,7 +15,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         SQType stack = sq.SQTypeInit();                       //初始化一个队列
-        System.out.println("入队列操作:");
+        System.out.println("入队列操作演示:");
         System.out.println("输入姓名 年龄进行入队列操作");
         do
         {

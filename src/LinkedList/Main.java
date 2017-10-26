@@ -12,10 +12,10 @@ public class Main {
 		String key,findkey;
 		Scanner input = new Scanner(System.in);
 
-		System.out.println("链表测试,先输入链表中的数据.格式为:关键字 姓名 年龄  \n");
+		System.out.println("链表结构演示,先输入链表中的数据.格式为:关键字 姓名 年龄  \n");
 		do{
 			DATA2 nodeData = new DATA2();
-			System.out.println("请输入关键字 \n");
+			System.out.println("请输入关键字:如果输入0则退出循环 \n");
 			nodeData.key = input.next();
 			if(nodeData.key.equals("0")){                              //判断关键字是否为0
 				break;

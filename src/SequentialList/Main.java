@@ -44,7 +44,7 @@ public class Main {
 		System.out.println("\n 顺序表的结点顺序是: \n");
 		SL.SLAll(SL);
 
-		System.out.println("\n 要取出的结点序号为: ");
+		System.out.println("\n 要取出的结点序号为:是序号不是关键字 ");
 		i = input.nextInt();
 		pdata = SL.SLFindByNum(SL, i);
 		if(pdata!=null){
@@ -57,7 +57,7 @@ public class Main {
 		i = SL.SLFindByCout(SL, key);
 		pdata = SL.SLFindByNum(SL, i);
 		if(pdata!=null){
-			System.out.printf("第%d个结点为:(%d,%s,%d)\n",i,pdata.key,pdata.name,pdata.age);
+			System.out.printf("第%d个结点为:(%s,%s,%d)\n",i,pdata.key,pdata.name,pdata.age);
 		}
 
 	}

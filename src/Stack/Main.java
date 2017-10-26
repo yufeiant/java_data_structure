@@ -15,12 +15,12 @@ public class Main {
         //初始化栈
         StackType stack = st.SYInit();                //设置栈顶为0
         Scanner input = new Scanner(System.in);
-        System.out.println("\n 要取出的结点序号为: ");
+        System.out.println("\n 栈结构操作演示: ");
         System.out.println("输入姓名 年龄进行入栈操作");
         do
         {
             DATA3 data = new DATA3();
-            System.out.println("\n 请输入姓名: ");
+            System.out.println(" 请输入姓名: 如果输入0则退出循环");
             data.name=input.next();
             if(data.name.equals("0")){
                 break;
