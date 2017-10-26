@@ -81,7 +81,7 @@ public class SLType {
 	 * @return
 	 */
 	public DATA SLFindByNum(SLType SL,int n){                 //根据序号返回数据元素
-		if(n<1||n>SL.ListLen-1){
+		if(n<1||n>SL.ListLen+1){
 			System.out.println("查找符号错误！\n");
 			return null;
 		}
@@ -93,7 +93,8 @@ public class SLType {
 	 */
 	public int SLFindByCout(SLType SL,String key){           //按照关键字查找元素
 		int j;
-		for (j = 1; j < SL.ListLen; j++) {
+
+		for (j = 1; j <= SL.ListLen; j++) {
 			if(SL.ListData[j].key.compareTo(key)==0){
 				return j;
 			}
@@ -106,7 +107,7 @@ public class SLType {
 	 */
 	public int SLAll(SLType SL){
 		int i;
-		for(i =1;i<SL.ListLen;i++){
+		for(i =1;i<=SL.ListLen;i++){
 			System.out.printf("(%s,%s,%d)\n",SL.ListData[i].key,SL.ListData[i].name,SL.ListData[i].age);
 		}
 		return i;

@@ -19,16 +19,18 @@ public class Main {
 		Scanner input =  new Scanner(System.in);
 
 		do{
-			System.out.println("请输入添加的结点(学号 姓名 年龄):");
-			DATA data = new DATA();
-			data.key = input.next();
-			System.out.println("请输入添加的结点(学号 key =):"+data.key);
-			data.name = input.next();
-			System.out.println("请输入添加的结点(姓名 name =):"+data.name);
-			data.age = input.nextInt();
-			System.out.println("请输入添加的结点(年龄 age =):"+data.age);
 
-			if(data.age!=0){
+			DATA data = new DATA();
+
+			System.out.println("请输入添加的(学号):如果输入0则退出循环");
+			data.key = input.next();
+
+			if(!data.key.equals("0")){
+				System.out.println("请输入添加的(姓名):");
+				data.name = input.next();
+
+				System.out.println("请输入添加的(年龄):");
+				data.age = input.nextInt();
 				if(SL.SLAdd(SL, data)==0){                 //如果返回是0,则添加失败
 					break;
 				}
@@ -44,7 +46,7 @@ public class Main {
 		i = input.nextInt();
 		pdata = SL.SLFindByNum(SL, i);
 		if(pdata!=null){
-			System.out.printf("第%d个结点为:(%d,%s,%d)\n",i,pdata.key,pdata.name,pdata.age);
+			System.out.printf("第%d个结点为:(%s,%s,%d)\n",i,pdata.key,pdata.name,pdata.age);
 		}
 
 		System.out.println("\n 要查找结点的关键字:");
