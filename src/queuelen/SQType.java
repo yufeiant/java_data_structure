@@ -52,7 +52,7 @@ public class SQType {
     }
 
     /**
-     * 释放空间
+     * 清空队列
      */
     public void SQTypeClear(SQType q){
         if(q!=null){
@@ -62,11 +62,20 @@ public class SQType {
     }
 
     /**
+     * 释放空间
+     */
+    public void SQTypeFree(SQType q){
+        if(q!=null){
+            q = null;
+        }
+    }
+
+    /**
      * 入队列
      * 这个是队列的主要操作,主要操作是将数据元素从队列底保存到队列结构.主要有如下几个步骤:
      * 1.首先判断tail是否等于QUEUELEN,也就是是否满了;
-     * 2.设置tail=tail+1;(队列顶引用加1,指向入队列地址);
-     * 3.将入队列元素指向;
+       2.把当前数据元素指向现在的队尾tail
+       3.把tail=tail+1 ,向后移动一个位置.
      * @return
      */
     public boolean SQTypeInsert(SQType q,DATA4 data){
@@ -97,7 +106,6 @@ public class SQType {
     /**
      * 读取结点
      * 和出队列类似,区别就是读取完数据后不会把数据指向下一个元素
-     * 1.判断队列是否为空
      *
      * @return
      */
