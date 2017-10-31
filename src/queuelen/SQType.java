@@ -36,7 +36,7 @@ public class SQType {
         if(q!=null){
             return q.head ==q.tail;
         }
-        return false;
+        return true;                                  //队列是null也是空，返回true
     }
 
     /**
